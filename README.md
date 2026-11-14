@@ -39,7 +39,7 @@
 ## 4. Manejo de Pila Manual (`04_manejo_pila_manual.asm`)
 
 * **¿Qué hace el programa?**
-  Demuestra el paso de parámetros por medio de la pila y la creación de un marco de pila manual usando `EBP` y `ESP`. El procedimiento `main` guarda un valor testigo (`999`) en `EBX`, empuja los valores `3` y `25` a la pila e invoca a `SumarPila`, donde se leen mediante desplazamientos (`[ebp+8]` y `[ebp+12]`), se multiplican con `imul` y se limpia la pila al retornar con `ret 8`.
+  Demuestra el paso de parámetros por medio de la pila y la creación de un marco de pila manual usando `EBP` y `ESP`. El procedimiento `main` guarda un valor (`999`) en `EBX`, empuja los valores `3` y `25` a la pila e invoca a `SumarPila`, donde se leen mediante desplazamientos (`[ebp+8]` y `[ebp+12]`), se multiplican con `imul` y se limpia la pila al retornar con `ret 8`.
 
 * **¿Qué se comprobó al ejecutarlo?**
   Se verificó en el depurador que `EAX` recibe correctamente el resultado de la operación (`75`), que el registro `EBX` conserva intacto su valor original (`999`) gracias al respaldo con `push`/`pop`, y que `ret 8` libera los 8 bytes de los parámetros dejando el puntero de pila `ESP` equilibrado al volver a `main`.
