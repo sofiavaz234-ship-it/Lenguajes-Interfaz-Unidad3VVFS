@@ -29,7 +29,7 @@
 ## 3. Validar Cadena No Vacía (`03_validar_no_vacia.asm`)
 
 * **¿Qué hace el programa?**
-  Solicita una cadena de texto al usuario mediante `ReadString`, pasa la longitud capturada a través del registro `ECX` hacia el procedimiento `ValidarNoVacia` y evalúa el valor booleano retornado en `EAX` (`1` = válida, `0` = vacía) utilizando la instrucción `test eax, eax` para mostrar el mensaje correspondiente.
+  Solicita una cadena de texto al usuario mediante `ReadString`, pasa la longitud capturada a través del registro `ECX` hacia el procedimiento `ValidarNoVacia` y evalúa el valor retornado en `EAX` (`1` = válida, `0` = vacía) utilizando la instrucción `test eax, eax` para mostrar el mensaje correspondiente.
 
 * **¿Qué se comprobó al ejecutarlo?**
   Se verificó que al presionar únicamente `Enter` sin escribir texto, `ReadString` devuelve `0` en `EAX`, el procedimiento retorna `0` y el salto condicional `jz` redirige correctamente al mensaje de error. Al ingresar cualquier carácter, el procedimiento retorna `1` y confirma que la entrada es válida.
